@@ -10,12 +10,12 @@ return {
 		vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left<CR>", {})
 		vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal float<CR>", {})
 
-        require('neo-tree').setup({
-            enable_git_status = true,
-			      enable_diagnostics = true,
-			      window = {
-				      width = 30,
-			      },
-        })
+		require("neo-tree").setup({
+			enable_git_status = true,
+			enable_diagnostics = true,
+			window = {
+				width = 30,
+			},
+		})
 	end,
 }

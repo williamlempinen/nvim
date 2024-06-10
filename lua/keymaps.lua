@@ -21,6 +21,11 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 -- paste
 vim.keymap.set("n", "<leader>p", [["+p]])
 
+-- tabs
+vim.api.nvim_set_keymap('n', '<Tab>', ':BufferNext<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader><Tab>', ':BufferPrevious<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>bd', ':BufferClose<CR>', { noremap = true, silent = true })
+
 
 
 

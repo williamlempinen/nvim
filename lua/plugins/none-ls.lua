@@ -10,7 +10,20 @@ return {
       debug = true,
       sources = {
         null_ls.builtins.formatting.stylua,
-        null_ls.builtins.formatting.prettier,
+        null_ls.builtins.formatting.prettier.with({
+          filetypes = {
+            "javascript",
+            "javascriptreact",
+            "typescript",
+            "typescriptreact",
+            "css",
+            "scss",
+            "json",
+            "yaml",
+            "html",
+          },
+          extra_args = { "--single-quote", "--jsx-single-quote", "--trailing-comma", "es5" },
+        }),
         require("none-ls.diagnostics.eslint_d"),
       },
     })

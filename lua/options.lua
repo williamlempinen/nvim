@@ -8,6 +8,7 @@ vim.opt.cursorline = true
 vim.opt.autoread = true
 vim.opt.mouse = "a"
 
+vim.opt.wrap = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 

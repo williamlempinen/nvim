@@ -22,7 +22,7 @@ return {
             "yaml",
             "html",
           },
-          extra_args = { "--single-quote", "--jsx-single-quote", "--trailing-comma", "es5" },
+          extra_args = { "--single-quote", "--semi", "--jsx-single-quote", "--trailing-comma", "es5" },
         }),
         require("none-ls.diagnostics.eslint_d"),
       },

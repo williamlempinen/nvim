@@ -17,5 +17,12 @@ vim.opt.shiftwidth = 2
 vim.opt.shiftround = true
 vim.opt.expandtab = true
 
+vim.cmd([[
+  highlight Normal guibg=NONE
+  highlight Normal ctermbg=NONE
+  highlight NonText guibg=NONE
+  highlight NonText ctermbg=NONE
+]])
+
 vim.cmd([[ set noswapfile ]])
 vim.cmd([[ set termguicolors ]])

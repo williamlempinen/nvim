@@ -5,7 +5,17 @@ return {
 		config = function()
 			local config = require("nvim-treesitter.configs")
 			config.setup({
-				ensure_installed = { "c", "lua", "vim", "html", "java", "javascript", "typescript", "tsx", "json" },
+				ensure_installed = {
+					"c",
+					"lua",
+					"vim",
+					"html",
+					"java",
+					"javascript",
+					"typescript",
+					"tsx",
+					"json",
+				},
 				auto_install = true,
 				autotag = {
 					enable = true,

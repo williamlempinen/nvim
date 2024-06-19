@@ -2,7 +2,7 @@ return {
 	"akinsho/toggleterm.nvim",
 	config = function()
 		require("toggleterm").setup({
-			size = 20,
+			size = 12,
 			open_mapping = false,
 			hide_numbers = true,
 			shade_filetypes = {},

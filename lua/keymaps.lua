@@ -3,6 +3,8 @@
 vim.keymap.set("n", "<C-n>", ":Neotree filesystem toggle<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-Right>", "<C-w>l", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-Left>", "<C-w>h", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-h>", "<C-w>h", { noremap = true, silent = true })
 
 -- move lines up and down with K and J
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")

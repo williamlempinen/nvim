@@ -16,6 +16,25 @@ return {
 			window = {
 				width = 30,
 			},
+			default_component_configs = {
+				indent = {
+					indent_size = 1,
+					padding = 1,
+				},
+			},
+			git_status = {
+				symbols = {
+					added = "",
+					modified = "",
+					deleted = "✖",
+					renamed = "󰁕",
+					untracked = "",
+					ignored = "",
+					unstaged = "󰄱",
+					staged = "",
+					conflict = "",
+				},
+			},
 		})
 	end,
 }

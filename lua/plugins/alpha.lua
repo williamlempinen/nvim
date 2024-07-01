@@ -7,8 +7,26 @@ return {
   config = function()
     local alpha = require("alpha")
     local dashboard = require("alpha.themes.startify")
+    -- generate alphas: https://patorjk.com/software/taag/
 
-    dashboard.section.header.val = {
+    local sonogong = {
+      [[    ___  _____  _  _  _____   ___  _____  _  _   ___    ]],
+      [[   / __)(  _  )( \( )(  _  ) / __)(  _  )( \( ) / __)   ]],
+      [[   \__ \ )(_)(  )  (  )(_)( ( (_-. )(_)(  )  ( ( (_-.   ]],
+      [[   (___/(_____)(_)\_)(_____) \___/(_____)(_)\_) \___/   ]],
+    }
+
+    local name = {
+
+      [[.------..------..------..------..------..------..------.]],
+      [[|W.--. ||I.--. ||L.--. ||L.--. ||I.--. ||A.--. ||M.--. |]],
+      [[| :/\: || (\/) || :/\: || :/\: || (\/) || (\/) || (\/) |]],
+      [[| :\/: || :\/: || (__) || (__) || :\/: || :\/: || :\/: |]],
+      [[| '--'W|| '--'I|| '--'L|| '--'L|| '--'I|| '--'A|| '--'M|]],
+      [[`------'`------'`------'`------'`------'`------'`------']],
+    }
+
+    local neovim = {
       [[                                                                       ]],
       [[                                                                       ]],
       [[                                                                       ]],
@@ -26,6 +44,8 @@ return {
       [[                                                                       ]],
     }
 
+    dashboard.section.header.val = sonogong
+
     alpha.setup(dashboard.opts)
-  end
+  end,
 }

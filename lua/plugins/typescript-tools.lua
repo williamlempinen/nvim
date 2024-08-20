@@ -1,8 +1,13 @@
 return {
 	{
 		"luckasRanarison/tailwind-tools.nvim",
-		dependencies = { "nvim-treesitter/nvim-treesitter" },
-		opts = {},
+		name = "tailwind-tools",
+		build = ":UpdateRemotePlugins",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-telescope/telescope.nvim",
+		},
+		opts = {}, -- your configuration
 	},
 	{
 		"pmizio/typescript-tools.nvim",

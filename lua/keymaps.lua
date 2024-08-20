@@ -12,10 +12,10 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- yank
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
+vim.keymap.set({ "n", "v" }, "<leader>Y", [["+Y]])
 
 -- paste
-vim.keymap.set("n", "<leader>p", [["+p]])
+vim.keymap.set({ "n", "v" }, "<leader>p", [["+p]])
 
 -- close
 vim.api.nvim_set_keymap("n", "<C-Q>", ":q!<CR>", { noremap = true, silent = true })
@@ -23,4 +23,4 @@ vim.api.nvim_set_keymap("n", "<C-Q>", ":q!<CR>", { noremap = true, silent = true
 -- tabs
 vim.api.nvim_set_keymap("n", "<Tab>", ":BufferNext<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader><Tab>", ":BufferPrevious<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>bd", ":BufferClose<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>bc", ":BufferClose<CR>", { noremap = true, silent = true })

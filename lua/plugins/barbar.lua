@@ -17,7 +17,6 @@ return {
 					text = "undotree",
 					align = "center",
 				},
-				["neo-tree"] = { event = "BufWipeout" },
 				Outline = { event = "BufWinLeave", text = "symbols-outline", align = "right" },
 			},
 		})

@@ -52,7 +52,7 @@ return {
             teal = "#a0dfa0",
             sky = "#a0d0c0",
             sapphire = "#95b9d0",
-            blue = "#89a0e0",
+            blue = "#7f98dd",
             text = "#e0d0b0",
             subtext1 = "#d5c4a1",
             subtext0 = "#bdae93",

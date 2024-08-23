@@ -3,18 +3,12 @@ local opts = { noremap = true, silent = true }
 -- nvim-tree
 local api = require("nvim-tree.api")
 vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", opts)
-
-
--- neotree
--- ctrl + n to toggle neotree
--- vim.keymap.set("n", "<C-n>", ":Neotree filesystem toggle<CR>", opts)
 vim.keymap.set("n", "<C-Right>", "<C-w>l", opts)
 vim.keymap.set("n", "<C-Left>", "<C-w>h", opts)
 vim.keymap.set("n", "<C-Up>", "<C-w>k", opts)
 vim.keymap.set("n", "<C-Down>", "<C-w>j", opts)
 vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
 vim.keymap.set("n", "<C-h>", "<C-w>h", opts)
-vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal float<CR>", opts)
 
 -- remove character without adding it to the register
 vim.keymap.set("n", "x", '"_x', opts)

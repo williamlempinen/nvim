@@ -5,7 +5,6 @@ return {
       require("diffview").setup({})
     end,
   },
-  { "tpope/vim-fugitive" },
   {
     "lewis6991/gitsigns.nvim",
     config = function()
@@ -44,4 +43,3 @@ return {
     config = true,
   },
 }
-

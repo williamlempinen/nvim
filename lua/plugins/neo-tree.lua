@@ -7,12 +7,9 @@ return {
 		"MunifTanjim/nui.nvim",
 	},
 	config = function()
-		vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left<CR>", {})
-		vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal float<CR>", {})
-
 		require("neo-tree").setup({
-			enable_git_status = true,
-			enable_diagnostics = true,
+			--			vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left<CR>", {}),
+			--			enable_git_status = true,
 			window = {
 				width = 30,
 			},
@@ -32,14 +29,14 @@ return {
 			},
 			git_status = {
 				symbols = {
-					added = "++",
+					added = "+",
 					modified = "󰁕",
-					deleted = "✖",
-					renamed = "󰁕",
-					untracked = "",
-					ignored = "",
-					unstaged = "󰄱",
-					staged = "",
+					deleted = "x",
+					renamed = "",
+					untracked = "",
+					ignored = "",
+					unstaged = "",
+					staged = "",
 					conflict = "",
 				},
 			},

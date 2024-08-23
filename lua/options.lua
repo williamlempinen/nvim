@@ -1,5 +1,6 @@
 vim.opt.clipboard:append({ "unnamedplus" })
 
+-- set leader to space
 vim.g.mapleader = " "
 
 vim.lsp.set_log_level("debug")
@@ -22,3 +23,7 @@ vim.opt.expandtab = true
 
 vim.cmd([[ set noswapfile ]])
 vim.cmd([[ set termguicolors ]])
+
+
+
+

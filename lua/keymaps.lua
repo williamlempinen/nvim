@@ -1,10 +1,29 @@
+local opts = { noremap = true, silent = true }
+
 -- neotree
 -- ctrl + n to toggle neotree
-vim.keymap.set("n", "<C-n>", ":Neotree filesystem toggle<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-Right>", "<C-w>l", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-Left>", "<C-w>h", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-h>", "<C-w>h", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-n>", ":Neotree filesystem toggle<CR>", opts)
+vim.keymap.set("n", "<C-Right>", "<C-w>l", opts)
+vim.keymap.set("n", "<C-Left>", "<C-w>h", opts)
+vim.keymap.set("n", "<C-Up>", "<C-w>k", opts)
+vim.keymap.set("n", "<C-Down>", "<C-w>j", opts)
+vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
+vim.keymap.set("n", "<C-h>", "<C-w>h", opts)
+
+-- remove character without adding it to the register
+vim.keymap.set("n", "x", '"_x', opts)
+
+-- save file
+vim.keymap.set("n", "<C-s>", "<cmd> w <CR>", opts)
+
+-- quit file
+vim.keymap.set("n", "<C-q>", "<cmd> q <CR>", opts)
+
+-- select all
+vim.keymap.set("n", "<leader>a", "ggVG", opts)
+
+-- find matches
+vim.keymap.set("n", "<C-f>", "/", opts)
 
 -- move lines up and down with K and J
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -18,9 +37,45 @@ vim.keymap.set({ "n", "v" }, "<leader>Y", [["+Y]])
 vim.keymap.set({ "n", "v" }, "<leader>p", [["+p]])
 
 -- close
-vim.api.nvim_set_keymap("n", "<C-Q>", ":q!<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-Q>", ":q!<CR>", opts)
 
 -- tabs
-vim.api.nvim_set_keymap("n", "<Tab>", ":BufferNext<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader><Tab>", ":BufferPrevious<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>bc", ":BufferClose<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Tab>", ":BufferNext<CR>", opts)
+vim.keymap.set("n", "<leader><Tab>", ":BufferPrevious<CR>", opts)
+vim.keymap.set("n", "<leader>x", ":BufferClose<CR>", opts)
+
+-- commentting: gcc in normal mode
+
+-- Resize windows with arrows
+vim.keymap.set("n", "<S-Up>", ":resize -2<CR>", opts)
+vim.keymap.set("n", "<S-Down>", ":resize +2<CR>", opts)
+vim.keymap.set("n", "<S-Left>", ":vertical resize -2<CR>", opts)
+vim.keymap.set("n", "<S-Right>", ":vertical resize +2<CR>", opts)
+
+-- lsp
+vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+
+-- telescope
+local builtin = require("telescope.builtin")
+
+vim.keymap.set("n", "<Space>ff", builtin.find_files, {})
+vim.keymap.set("n", "<C-p>", builtin.find_files, {})
+vim.keymap.set("n", "<Space>fg", builtin.live_grep, {})
+vim.keymap.set("n", "<Space>fo", builtin.oldfiles, {})
+vim.keymap.set("n", "<Space>fh", builtin.help_tags, {})
+
+-- toggleterm
+vim.keymap.set("n", "<c-t>", "<cmd>1ToggleTerm<CR>", opts)
+vim.keymap.set("n", "<c-y>", "<cmd>2ToggleTerm<CR>", opts)
+
+-- window management
+vim.keymap.set("n", "<leader>v", "<C-w>v", opts) -- split window vertically
+vim.keymap.set("n", "<leader>h", "<C-w>s", opts) -- split window horizontally
+vim.keymap.set("n", "<leader>se", "<C-w>=", opts) -- make split windows equal width & height
+vim.keymap.set("n", "<leader>xs", ":close<CR>", opts) -- close current split window
+
+-- Press jk fast to exit insert mode
+vim.keymap.set("i", "jk", "<ESC>", opts)
+vim.keymap.set("i", "kj", "<ESC>", opts)

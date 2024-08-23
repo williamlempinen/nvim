@@ -23,3 +23,4 @@ vim.opt.expandtab = true
 
 vim.cmd([[ set noswapfile ]])
 vim.cmd([[ set termguicolors ]])
+

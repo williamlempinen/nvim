@@ -37,7 +37,7 @@ vim.keymap.set({ "n", "v" }, "<leader>Y", [["+Y]])
 vim.keymap.set({ "n", "v" }, "<leader>p", [["+p]])
 
 -- close
-vim.keymap.set("n", "<C-Q>", ":q!<CR>", opts)
+vim.keymap.set("n", "Q", "<nop>", opts)
 
 -- tabs
 vim.keymap.set("n", "<Tab>", ":BufferNext<CR>", opts)

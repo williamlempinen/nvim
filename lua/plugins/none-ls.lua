@@ -14,7 +14,6 @@ return {
 	},
 	config = function()
 		local null_ls = require("null-ls")
-
 		null_ls.setup({
 			debug = true,
 			sources = {
@@ -27,7 +26,6 @@ return {
 				}),
 			},
 		})
-
 		vim.keymap.set("n", "<leader>f", function()
 			vim.lsp.buf.format()
 		end)

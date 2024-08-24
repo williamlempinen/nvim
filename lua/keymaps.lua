@@ -60,8 +60,12 @@ vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
 -- telescope
 local builtin = require("telescope.builtin")
 
-vim.keymap.set("n", "<Space>ff", builtin.find_files, {})
-vim.keymap.set("n", "<C-p>", builtin.find_files, {})
+vim.keymap.set(
+  "n",
+  "<Space>ff",
+  "<cmd>lua require('telescope.builtin').find_files({ hidden = true, no_ignore = true, file_ignore_patterns = { '.git/', 'node_modules/' }})<CR>",
+  opts
+)
 vim.keymap.set("n", "<Space>fg", builtin.live_grep, {})
 vim.keymap.set("n", "<Space>fo", builtin.oldfiles, {})
 vim.keymap.set("n", "<Space>fh", builtin.help_tags, {})
@@ -71,9 +75,9 @@ vim.keymap.set("n", "<c-t>", "<cmd>1ToggleTerm<CR>", opts)
 vim.keymap.set("n", "<c-y>", "<cmd>2ToggleTerm<CR>", opts)
 
 -- window management
-vim.keymap.set("n", "<leader>v", "<C-w>v", opts) -- split window vertically
-vim.keymap.set("n", "<leader>h", "<C-w>s", opts) -- split window horizontally
-vim.keymap.set("n", "<leader>se", "<C-w>=", opts) -- make split windows equal width & height
+vim.keymap.set("n", "<leader>v", "<C-w>v", opts)      -- split window vertically
+vim.keymap.set("n", "<leader>h", "<C-w>s", opts)      -- split window horizontally
+vim.keymap.set("n", "<leader>se", "<C-w>=", opts)     -- make split windows equal width & height
 vim.keymap.set("n", "<leader>xs", ":close<CR>", opts) -- close current split window
 
 -- Press jk fast to exit insert mode

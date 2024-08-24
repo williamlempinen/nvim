@@ -1,18 +1,12 @@
 return {
 	{
-		"hrsh7th/cmp-buffer",
-	},
-	{
-		"hrsh7th/cmp-path",
-	},
-	{
-		"hrsh7th/cmp-cmdline",
-	},
-	{
 		"hrsh7th/nvim-cmp",
 		event = "InsertEnter",
 		dependencies = {
 			{ "L3MON4D3/LuaSnip" },
+			{ "hrsh7th/cmp-buffer" },
+			{ "hrsh7th/cmp-path" },
+			{ "hrsh7th/cmp-cmdline" },
 		},
 		config = function()
 			local cmp = require("cmp")

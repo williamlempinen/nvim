@@ -124,6 +124,7 @@ return {
       git = {
         enable = true, -- Enable Git integration
         show_on_dirs = true,
+        ignore = false,
         show_on_open_dirs = true,
         disable_for_dirs = {},
         timeout = 400,

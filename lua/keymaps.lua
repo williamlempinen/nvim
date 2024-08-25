@@ -53,9 +53,9 @@ vim.keymap.set("n", "<S-Left>", ":vertical resize -2<CR>", opts)
 vim.keymap.set("n", "<S-Right>", ":vertical resize +2<CR>", opts)
 
 -- lsp
-vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
-vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, opts)
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 
 -- telescope
 local builtin = require("telescope.builtin")
@@ -63,9 +63,10 @@ local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", function()
 	builtin.find_files({ hidden = true, no_ignore = true, file_ignore_patterns = { ".git/", "node_modules/" } })
 end, opts)
-vim.keymap.set("n", "<Space>fg", builtin.live_grep, {})
-vim.keymap.set("n", "<Space>fo", builtin.oldfiles, {})
-vim.keymap.set("n", "<Space>fh", builtin.help_tags, {})
+vim.keymap.set("n", "<Space>fg", builtin.live_grep, opts)
+vim.keymap.set("n", "<Space>fo", builtin.oldfiles, opts)
+vim.keymap.set("n", "<Space>fh", builtin.help_tags, opts)
+vim.keymap.set("n", "<Space>ch", builtin.command_history, opts)
 
 -- toggleterm
 vim.keymap.set("n", "<c-t>", "<cmd>1ToggleTerm<CR>", opts)

@@ -1,7 +1,6 @@
 local opts = { noremap = true, silent = true }
 
 -- nvim-tree
-local api = require("nvim-tree.api")
 vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", opts)
 vim.keymap.set("n", "<C-Right>", "<C-w>l", opts)
 vim.keymap.set("n", "<C-Left>", "<C-w>h", opts)
@@ -61,7 +60,7 @@ vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 local builtin = require("telescope.builtin")
 
 vim.keymap.set("n", "<leader>ff", function()
-  builtin.find_files({ hidden = true, no_ignore = true, file_ignore_patterns = { ".git/", "node_modules/" } })
+	builtin.find_files({ hidden = true, no_ignore = true, file_ignore_patterns = { ".git/", "node_modules/" } })
 end, opts)
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, opts)
 vim.keymap.set("n", "<leader>fo", builtin.oldfiles, opts)
@@ -73,9 +72,9 @@ vim.keymap.set("n", "<c-t>", "<cmd>1ToggleTerm<CR>", opts)
 vim.keymap.set("n", "<c-y>", "<cmd>2ToggleTerm<CR>", opts)
 
 -- window management
-vim.keymap.set("n", "<leader>v", "<C-w>v", opts)      -- split window vertically
-vim.keymap.set("n", "<leader>h", "<C-w>s", opts)      -- split window horizontally
-vim.keymap.set("n", "<leader>se", "<C-w>=", opts)     -- make split windows equal width & height
+vim.keymap.set("n", "<leader>v", "<C-w>v", opts) -- split window vertically
+vim.keymap.set("n", "<leader>h", "<C-w>s", opts) -- split window horizontally
+vim.keymap.set("n", "<leader>se", "<C-w>=", opts) -- make split windows equal width & height
 vim.keymap.set("n", "<leader>xs", ":close<CR>", opts) -- close current split window
 
 -- Press jk fast to exit insert mode
@@ -85,9 +84,9 @@ vim.keymap.set("i", "kj", "<ESC>", opts)
 -- gitsigns
 local gitsigns = require("gitsigns")
 
-vim.keymap.set("n", "<leader>B", gitsigns.blame_line, opts)   -- blame line
-vim.keymap.set("n", "<leader>R", gitsigns.reset_hunk, opts)   -- reset hunk
+vim.keymap.set("n", "<leader>B", gitsigns.blame_line, opts) -- blame line
+vim.keymap.set("n", "<leader>R", gitsigns.reset_hunk, opts) -- reset hunk
 vim.keymap.set("n", "<leader>P", gitsigns.preview_hunk, opts) -- preview hunk
 vim.keymap.set("n", "<leader>D", function()
-  gitsigns.diffthis("~1")
+	gitsigns.diffthis("~1")
 end, opts) -- diff this

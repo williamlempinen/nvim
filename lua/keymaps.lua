@@ -90,3 +90,11 @@ vim.keymap.set("n", "<leader>P", gitsigns.preview_hunk, opts) -- preview hunk
 vim.keymap.set("n", "<leader>D", function()
 	gitsigns.diffthis("~1")
 end, opts) -- diff this
+
+-- spectre
+local spectre = require("spectre")
+
+vim.keymap.set("n", "<leader>S", spectre.toggle, opts)
+vim.keymap.set("n", "<leader>sf", function()
+	spectre.open_file_search({ select_word = true })
+end, opts)

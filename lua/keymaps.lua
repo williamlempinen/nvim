@@ -68,8 +68,8 @@ vim.keymap.set("n", "<leader>fh", builtin.help_tags, opts)
 vim.keymap.set("n", "<leader>ch", builtin.command_history, opts)
 
 -- toggleterm
-vim.keymap.set("n", "<c-t>", "<cmd>1ToggleTerm<CR>", opts)
-vim.keymap.set("n", "<c-y>", "<cmd>2ToggleTerm<CR>", opts)
+vim.keymap.set("n", "<c-t>", "<cmd>1ToggleTerm<CR>", opts) -- one term
+vim.keymap.set("n", "<c-y>", "<cmd>2ToggleTerm<CR>", opts) -- second term
 
 -- window management
 vim.keymap.set("n", "<leader>v", "<C-w>v", opts)      -- split window vertically

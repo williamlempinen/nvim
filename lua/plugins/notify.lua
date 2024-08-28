@@ -4,9 +4,10 @@ return {
     vim.notify = require("notify")
     require("notify").setup({
       stages = "fade_in_slide_out",
-      timeout = 3000,
+      timeout = 2500,
       render = "compact",
       level = "info",
     })
   end,
+  lazy = false,
 }

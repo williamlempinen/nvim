@@ -1,5 +1,7 @@
 vim.opt.clipboard:append({ "unnamedplus" })
 
+vim.opt.termguicolors = true
+
 -- set leader to space
 vim.g.mapleader = " "
 
@@ -11,7 +13,7 @@ vim.opt.laststatus = 2
 vim.opt.autowrite = true
 vim.opt.autoread = true
 vim.opt.mouse = "a"
-vim.opt.scrolloff = 20
+vim.opt.scrolloff = 12
 vim.opt.ruler = true
 vim.opt.wrap = true
 vim.opt.number = true
@@ -21,4 +23,3 @@ vim.opt.shiftwidth = 2
 vim.opt.shiftround = true
 vim.opt.expandtab = true
 vim.opt.swapfile = false
-vim.opt.termguicolors = true

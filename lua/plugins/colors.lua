@@ -1,5 +1,14 @@
 return {
   {
+    "projekt0n/github-nvim-theme",
+    lazy = false,  -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function()
+      require("github-theme").setup({})
+      vim.cmd("colorscheme github_dark_dimmed")
+    end,
+  },
+  {
     "catppuccin/nvim",
     lazy = false,
     name = "catppuccin",
@@ -37,36 +46,36 @@ return {
           operators = {},
           -- miscs = {}, -- Uncomment to turn off hard-coded styles
         },
-        color_overrides = {
-          mocha = {
-            rosewater = "#ffc9c9",
-            flamingo = "#ff9f9a",
-            pink = "#ffa9c9",
-            mauve = "#df95cf",
-            lavender = "#a990c9",
-            red = "#ff6960",
-            maroon = "#f98080",
-            peach = "#f9905f",
-            yellow = "#f9bd69",
-            green = "#b0d080",
-            teal = "#a0dfa0",
-            sky = "#a0d0c0",
-            sapphire = "#95b9d0",
-            blue = "#7f98dd",
-            text = "#e0d0b0",
-            subtext1 = "#d5c4a1",
-            subtext0 = "#bdae93",
-            overlay2 = "#928374",
-            overlay1 = "#7c6f64",
-            overlay0 = "#665c54",
-            surface2 = "#504844",
-            surface1 = "#3a3634",
-            surface0 = "#252525",
-            base = "#151515",
-            mantle = "#0e0e0e",
-            crust = "#080808",
-          },
-        },
+        -- color_overrides = {
+        --   mocha = {
+        --     rosewater = "#ffc9c9",
+        --     flamingo = "#ff9f9a",
+        --     pink = "#ffa9c9",
+        --     mauve = "#df95cf",
+        --     lavender = "#a990c9",
+        --     red = "#ff6960",
+        --     maroon = "#f98080",
+        --     peach = "#f9905f",
+        --     yellow = "#f9bd69",
+        --     green = "#b0d080",
+        --     teal = "#a0dfa0",
+        --     sky = "#a0d0c0",
+        --     sapphire = "#95b9d0",
+        --     blue = "#7f98dd",
+        --     text = "#e0d0b0",
+        --     subtext1 = "#d5c4a1",
+        --     subtext0 = "#bdae93",
+        --     overlay2 = "#928374",
+        --     overlay1 = "#7c6f64",
+        --     overlay0 = "#665c54",
+        --     surface2 = "#504844",
+        --     surface1 = "#3a3634",
+        --     surface0 = "#252525",
+        --     base = "#151515",
+        --     mantle = "#0e0e0e",
+        --     crust = "#080808",
+        --   },
+        -- },
         custom_highlights = {},
         default_integrations = true,
         integrations = {
@@ -83,7 +92,7 @@ return {
         },
       })
 
-      vim.cmd.colorscheme("catppuccin")
+      --  vim.cmd.colorscheme("catppuccin")
     end,
   },
 }

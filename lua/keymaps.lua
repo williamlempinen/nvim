@@ -9,8 +9,11 @@ vim.keymap.set("n", "<C-Down>", "<C-w>j", opts)
 vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
 vim.keymap.set("n", "<C-h>", "<C-w>h", opts)
 
--- remove character without adding it to the register
-vim.keymap.set("n", "x", '"_x', opts)
+-- Override other delete operations
+vim.keymap.set("n", "dd", '"_dd', opts) -- delete a line without adding to clipboard
+vim.keymap.set("n", "D", '"_D', opts) -- delete from cursor to end of line without adding to clipboard
+vim.keymap.set("v", "d", '"_d', opts) -- delete in visual mode without adding to clipboard
+vim.keymap.set("n", "x", '"_x', opts) -- delete chracter without adding it to the register
 
 -- save file
 vim.keymap.set("n", "<C-s>", "<cmd> w <CR>", opts)
@@ -35,7 +38,7 @@ vim.keymap.set({ "n", "v" }, "<leader>Y", [["+Y]])
 -- paste
 vim.keymap.set({ "n", "v" }, "<leader>p", [["+p]])
 
--- close
+-- no-op for Q
 vim.keymap.set("n", "Q", "<nop>", opts)
 
 -- tabs
@@ -77,9 +80,8 @@ vim.keymap.set("n", "<leader>h", "<C-w>s", opts) -- split window horizontally
 vim.keymap.set("n", "<leader>se", "<C-w>=", opts) -- make split windows equal width & height
 vim.keymap.set("n", "<leader>xs", ":close<CR>", opts) -- close current split window
 
--- Press jk fast to exit insert mode
-vim.keymap.set("i", "jk", "<ESC>", opts)
-vim.keymap.set("i", "kj", "<ESC>", opts)
+-- Press qq fast to exit insert mode
+vim.keymap.set("i", "qq", "<ESC>", opts)
 
 -- gitsigns
 local gitsigns = require("gitsigns")

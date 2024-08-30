@@ -3,10 +3,6 @@ return {
   config = function()
     require("nvim-tree").setup({
 
-      -- Define custom highlight groups for added and modified files
-      vim.api.nvim_set_hl(0, "NvimTreeGitNew", { fg = "#34d058" }),
-      vim.api.nvim_set_hl(0, "NvimTreeGitDirty", { fg = "#70ffe3" }),
-
       on_attach = "default",
       hijack_cursor = false,
       auto_reload_on_write = true,
@@ -69,7 +65,7 @@ return {
               color = true,
             },
           },
-          git_placement = "before",
+          git_placement = "after",
           padding = " ",
           symlink_arrow = " ➛ ",
           show = {

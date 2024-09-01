@@ -11,7 +11,7 @@ vim.opt.termguicolors = true
 -- set leader to space
 vim.g.mapleader = " "
 
-vim.lsp.set_log_level("trace")
+vim.lsp.set_log_level("error")
 
 vim.opt.backspace = "2"
 vim.opt.showcmd = true

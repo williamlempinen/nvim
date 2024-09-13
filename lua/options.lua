@@ -31,5 +31,3 @@ vim.opt.shiftround = true
 vim.opt.expandtab = true
 vim.opt.swapfile = false
 vim.opt.history = 1000
-vim.opt.spell = true
-vim.opt.spelllang = "en_us"

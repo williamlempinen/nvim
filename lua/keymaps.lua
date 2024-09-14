@@ -14,9 +14,9 @@ vim.keymap.set("n", "<C-h>", "<C-w>h", opts)
 
 -- Override other delete operations
 vim.keymap.set("n", "dd", '"_dd', opts) -- delete a line without adding to clipboard
-vim.keymap.set("n", "D", '"_D', opts)   -- delete from cursor to end of line without adding to clipboard
-vim.keymap.set("v", "d", '"_d', opts)   -- delete in visual mode without adding to clipboard
-vim.keymap.set("n", "x", '"_x', opts)   -- delete chracter without adding it to the register
+vim.keymap.set("n", "D", '"_D', opts) -- delete from cursor to end of line without adding to clipboard
+vim.keymap.set("v", "d", '"_d', opts) -- delete in visual mode without adding to clipboard
+vim.keymap.set("n", "x", '"_x', opts) -- delete chracter without adding it to the register
 
 -- save file
 vim.keymap.set("n", "<C-s>", "<cmd> w <CR>", opts)
@@ -63,24 +63,24 @@ vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, opts)
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 
 -- telescope
-local builtin = require("telescope.builtin")
+local telescope = require("telescope.builtin")
 
 vim.keymap.set("n", "<leader>ff", function()
-  builtin.find_files({ hidden = true, no_ignore = true, file_ignore_patterns = { ".git/", "node_modules/" } })
+	telescope.find_files({ hidden = true, no_ignore = true, file_ignore_patterns = { ".git/", "node_modules/" } })
 end, opts)
-vim.keymap.set("n", "<leader>fg", builtin.live_grep, opts)
-vim.keymap.set("n", "<leader>fo", builtin.oldfiles, opts)
-vim.keymap.set("n", "<leader>fh", builtin.help_tags, opts)
-vim.keymap.set("n", "<leader>ch", builtin.command_history, opts)
+vim.keymap.set("n", "<leader>fg", telescope.live_grep, opts)
+vim.keymap.set("n", "<leader>fo", telescope.oldfiles, opts)
+vim.keymap.set("n", "<leader>fh", telescope.help_tags, opts)
+vim.keymap.set("n", "<leader>ch", telescope.command_history, opts)
 
 -- toggleterm
 vim.keymap.set("n", "<c-t>", "<cmd>1ToggleTerm<CR>", opts) -- one term
 vim.keymap.set("n", "<c-y>", "<cmd>2ToggleTerm<CR>", opts) -- second term
 
 -- window management
-vim.keymap.set("n", "<leader>v", "<C-w>v", opts)      -- split window vertically
-vim.keymap.set("n", "<leader>h", "<C-w>s", opts)      -- split window horizontally
-vim.keymap.set("n", "<leader>se", "<C-w>=", opts)     -- make split windows equal width & height
+vim.keymap.set("n", "<leader>v", "<C-w>v", opts) -- split window vertically
+vim.keymap.set("n", "<leader>h", "<C-w>s", opts) -- split window horizontally
+vim.keymap.set("n", "<leader>se", "<C-w>=", opts) -- make split windows equal width & height
 vim.keymap.set("n", "<leader>xs", ":close<CR>", opts) -- close current split window
 
 -- Press qq fast to exit insert mode
@@ -89,11 +89,11 @@ vim.keymap.set("i", "qq", "<ESC>", opts)
 -- gitsigns
 local gitsigns = require("gitsigns")
 
-vim.keymap.set("n", "<leader>B", gitsigns.blame_line, opts)   -- blame line
-vim.keymap.set("n", "<leader>R", gitsigns.reset_hunk, opts)   -- reset hunk
+vim.keymap.set("n", "<leader>B", gitsigns.blame_line, opts) -- blame line
+vim.keymap.set("n", "<leader>R", gitsigns.reset_hunk, opts) -- reset hunk
 vim.keymap.set("n", "<leader>P", gitsigns.preview_hunk, opts) -- preview hunk
 vim.keymap.set("n", "<leader>D", function()
-  gitsigns.diffthis("~1")
+	gitsigns.diffthis("~1")
 end, opts) -- diff this
 
 -- spectre
@@ -101,17 +101,17 @@ local spectre = require("spectre")
 
 vim.keymap.set("n", "<leader>S", spectre.toggle, opts)
 vim.keymap.set("n", "<leader>sf", function()
-  spectre.open_file_search({ select_word = true })
+	spectre.open_file_search({ select_word = true })
 end, opts)
 vim.keymap.set("n", "<leader>sw", function()
-  spectre.open_visual({ select_word = true })
+	spectre.open_visual({ select_word = true })
 end, opts)
 vim.keymap.set("v", "<ESC><leader>sw", function()
-  spectre.open_visual({ select_word = true })
+	spectre.open_visual({ select_word = true })
 end, opts)
 
 -- kulala
 local kulala = require("kulala")
 
-vim.keymap.set("n", "<leader>HR", kulala.run, opts)   -- run the current request
+vim.keymap.set("n", "<leader>HR", kulala.run, opts) -- run the current request
 vim.keymap.set("n", "<leader>HC", kulala.close, opts) -- close current .http buffer

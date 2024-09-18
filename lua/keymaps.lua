@@ -119,5 +119,3 @@ vim.keymap.set("n", "<leader>HC", kulala.close, opts) -- close current .http buf
 -- fast scrolling
 vim.keymap.set("n", "J", "9j", opts)
 vim.keymap.set("n", "K", "9k", opts)
-vim.keymap.set("v", "J", "9j", opts)
-vim.keymap.set("v", "K", "9k", opts)

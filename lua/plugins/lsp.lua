@@ -35,9 +35,17 @@ return {
 	},
 	{
 		"williamboman/mason.nvim",
-		config = function()
-			require("mason").setup()
-		end,
+		opts = {
+			ensure_installed = {
+				"lua_ls",
+				"tsserver",
+				"html",
+				"cssls",
+				"tailwindcss",
+				"prismals",
+				"pyright",
+			},
+		},
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
@@ -89,7 +97,7 @@ return {
 			end
 
 			-- eslint should be added here sometime, return some error
-			local servers = { "tsserver", "tailwindcss", "lua_ls", "html", "cssls" }
+			local servers = { "tsserver", "tailwindcss", "lua_ls", "html", "cssls", "pyright" }
 
 			for _, server in ipairs(servers) do
 				lspconfig[server].setup({

@@ -15,6 +15,7 @@ return {
 					"typescript",
 					"tsx",
 					"json",
+					"python",
 				},
 				auto_install = true,
 				highlight = { enable = true },

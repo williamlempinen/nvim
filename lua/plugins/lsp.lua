@@ -50,6 +50,7 @@ return {
 					"cssls",
 					"tailwindcss",
 					"prismals",
+					"pyright",
 				},
 			})
 		end,

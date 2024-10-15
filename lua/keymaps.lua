@@ -31,8 +31,8 @@ vim.keymap.set("n", "<leader>a", "ggVG", opts)
 vim.keymap.set("n", "<C-f>", "/", opts)
 
 -- move lines up and down with K and J
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "<S-Down>", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "<S-Up>", ":m '<-2<CR>gv=gv")
 
 -- yank
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])

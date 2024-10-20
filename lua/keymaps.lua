@@ -128,5 +128,5 @@ vim.keymap.set("n", "<leader>ng", function()
   neogit.open({ kind = "split_below" })
 end, opts)
 
--- error
+-- float diagnostics
 vim.keymap.set("n", "<leader>E", vim.diagnostic.open_float, opts)

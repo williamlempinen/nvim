@@ -1,9 +1,9 @@
 vim.opt.clipboard:append({ "unnamedplus" })
 
 vim.filetype.add({
-	extension = {
-		["http"] = "http",
-	},
+  extension = {
+    ["http"] = "http",
+  },
 })
 
 vim.opt.termguicolors = true

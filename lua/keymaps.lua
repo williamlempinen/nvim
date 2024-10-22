@@ -27,8 +27,8 @@ vim.keymap.set("n", "<C-q>", "<cmd> q <CR>", opts)
 -- select all
 vim.keymap.set("n", "<leader>a", "ggVG", opts)
 
--- find matches
-vim.keymap.set("n", "<C-f>", "/", opts)
+-- select word
+vim.keymap.set("n", "<S-w>", "viw", opts)
 
 -- move lines up and down with K and J
 vim.keymap.set("v", "<S-Down>", ":m '>+1<CR>gv=gv")

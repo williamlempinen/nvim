@@ -57,6 +57,8 @@ return {
           ".env.example",
           ".env",
           "config.*",
+          "target",
+          "build"
         },
         hidden_display = "none",
         symlink_destination = true,

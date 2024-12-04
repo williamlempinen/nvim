@@ -13,5 +13,5 @@ vim.opt.rtp:prepend(lazypath)
 require("options")
 require("lazy").setup("plugins")
 
-vim.cmd("colorscheme github_dark_default")
+vim.cmd("colorscheme kanagawa")
 require("keymaps")

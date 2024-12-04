@@ -18,6 +18,10 @@ vim.keymap.set("n", "D", '"_D', opts)   -- delete from cursor to end of line wit
 vim.keymap.set("v", "d", '"_d', opts)   -- delete in visual mode without adding to clipboard
 vim.keymap.set("n", "x", '"_x', opts)   -- delete character without adding it to the register
 
+-- numbers
+vim.keymap.set("n", "<leader>-", "<C-x>", opts)
+vim.keymap.set("n", "<leader>+", "<C-a>", opts)
+
 -- save file
 vim.keymap.set("n", "<C-s>", "<cmd> w <CR>", opts)
 
@@ -62,6 +66,7 @@ vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 
 -- telescope
 local telescope = require("telescope.builtin")
+local themes = require("telescope.themes")
 
 vim.keymap.set("n", "<leader>ff", function()
   telescope.find_files({ hidden = true, no_ignore = true, file_ignore_patterns = { ".git/", "node_modules/" } })
@@ -71,6 +76,10 @@ vim.keymap.set("n", "<leader>fo", telescope.oldfiles, opts)
 vim.keymap.set("n", "<leader>fh", telescope.help_tags, opts)
 vim.keymap.set("n", "<leader>ch", telescope.command_history, opts)
 vim.keymap.set("n", "<leader>cc", telescope.colorscheme, opts)
+vim.keymap.set("n", "<leader>km", telescope.keymaps, opts)
+vim.keymap.set("n", "<leader>sp", telescope.spell_suggest, opts)
+vim.keymap.set("n", "<leader>gc", telescope.git_commits, opts)
+vim.keymap.set("n", "<leader>tt", ":Telescope<CR>", opts)
 
 -- toggleterm
 vim.keymap.set("n", "<c-t>", "<cmd>1ToggleTerm<CR>", opts) -- one term
@@ -120,13 +129,6 @@ vim.keymap.set({ "n", "v" }, "J", "9j", opts)
 vim.keymap.set({ "n", "v" }, "K", "9k", opts)
 vim.keymap.set({ "n", "v" }, "L", "16l", opts)
 vim.keymap.set({ "n", "v" }, "H", "16h", opts)
-
--- neogit
-local neogit = require("neogit")
-
-vim.keymap.set("n", "<leader>ng", function()
-  neogit.open({ kind = "split_below" })
-end, opts)
 
 -- float diagnostics
 vim.keymap.set("n", "<leader>E", vim.diagnostic.open_float, opts)

@@ -1,4 +1,3 @@
-## Nvim
+# NeoVim
 
-
-new to neovim
+I use neovim as my main text editor and these are my current configurations.

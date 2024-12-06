@@ -22,6 +22,9 @@ vim.keymap.set("n", "x", '"_x', opts)   -- delete character without adding it to
 vim.keymap.set("n", "<leader>-", "<C-x>", opts)
 vim.keymap.set("n", "<leader>+", "<C-a>", opts)
 
+-- change-in-word
+vim.keymap.set("n", "<C-c>", "ciw", opts)
+
 -- save file
 vim.keymap.set("n", "<C-s>", "<cmd> w <CR>", opts)
 
@@ -131,4 +134,4 @@ vim.keymap.set({ "n", "v" }, "L", "16l", opts)
 vim.keymap.set({ "n", "v" }, "H", "16h", opts)
 
 -- float diagnostics
-vim.keymap.set("n", "<leader>E", vim.diagnostic.open_float, opts)
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, opts)

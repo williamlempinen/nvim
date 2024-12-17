@@ -18,18 +18,22 @@ vim.keymap.set("n", "D", '"_D', opts) -- delete from cursor to end of line witho
 vim.keymap.set("v", "d", '"_d', opts) -- delete in visual mode without adding to clipboard
 vim.keymap.set("n", "x", '"_x', opts) -- delete character without adding it to the register
 
--- numbers
+-- increment / decrement
 vim.keymap.set("n", "<leader>-", "<C-x>", opts)
 vim.keymap.set("n", "<leader>+", "<C-a>", opts)
 
--- change-in-word
-vim.keymap.set("n", "<C-c>", "ciw", opts)
+-- change-in-word, not overriding the clipboard
+vim.keymap.set("n", "<C-c>", '"_ciw', opts)
+
+-- terminal
+vim.keymap.set("t", "<ESC>", "<C-\\><C-n>", opts)
+vim.keymap.set("n", "<leader>xt", "<C-\\><C-n>:bd!<CR>", opts)
 
 -- save file
-vim.keymap.set("n", "<C-s>", "<cmd> w <CR>", opts)
+vim.keymap.set("n", "<C-s>", ":w<CR>", opts)
 
 -- quit file
-vim.keymap.set("n", "<C-q>", "<cmd> q <CR>", opts)
+vim.keymap.set("n", "<C-q>", ":q<CR>", opts)
 
 -- select all
 vim.keymap.set("n", "<leader>a", "ggVG", opts)
@@ -85,8 +89,8 @@ vim.keymap.set("n", "<leader>gc", telescope.git_commits, opts)
 vim.keymap.set("n", "<leader>tt", ":Telescope<CR>", opts)
 
 -- toggleterm
-vim.keymap.set("n", "<c-t>", "<cmd>1ToggleTerm<CR>", opts) -- one term
-vim.keymap.set("n", "<c-y>", "<cmd>2ToggleTerm<CR>", opts) -- second term
+vim.keymap.set("n", "<c-t>", ":1ToggleTerm<CR>", opts) -- one term
+vim.keymap.set("n", "<c-y>", ":2ToggleTerm<CR>", opts) -- second term
 
 -- window management
 vim.keymap.set("n", "<leader>v", "<C-w>v", opts) -- split window vertically

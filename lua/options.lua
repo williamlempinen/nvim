@@ -1,9 +1,7 @@
-vim.opt.clipboard:append({ "unnamedplus" })
-
 vim.filetype.add({
-	extension = {
-		["http"] = "http",
-	},
+  extension = {
+    ["http"] = "http",
+  },
 })
 
 vim.opt.termguicolors = true
@@ -13,6 +11,7 @@ vim.g.mapleader = " "
 
 vim.lsp.set_log_level("error")
 
+vim.opt.clipboard = "unnamedplus"
 vim.opt.backspace = "2"
 vim.opt.showcmd = true
 vim.opt.laststatus = 2
@@ -31,3 +30,13 @@ vim.opt.shiftround = true
 vim.opt.expandtab = true
 vim.opt.swapfile = false
 vim.opt.history = 1000
+
+-- terminal
+vim.api.nvim_create_autocmd("TermOpen", {
+  pattern = "*",
+  callback = function()
+    vim.wo.number = false
+    vim.wo.relativenumber = false
+    vim.cmd("startinsert")
+  end,
+})

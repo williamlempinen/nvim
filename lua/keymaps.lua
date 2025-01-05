@@ -1,7 +1,21 @@
 local opts = { noremap = true, silent = true }
 local u = require("utils")
 
+---------------------------------------------------------------------------
+--- utils
+---------------------------------------------------------------------------
+-- copy diagnostics to clipboard
 vim.keymap.set("n", "<leader>cd", u.CopyDiagnosticsToClipboard, opts)
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+--- basic editing and navigation
+---------------------------------------------------------------------------
+-- Override delete operations
+vim.keymap.set("n", "dd", '"_dd', opts)
+vim.keymap.set("n", "D", '"_D', opts)
+vim.keymap.set("v", "d", '"_d', opts)
+vim.keymap.set("n", "x", '"_x', opts)
 
 -- nvim-tree
 vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", opts)
@@ -11,12 +25,6 @@ vim.keymap.set("n", "<C-Up>", "<C-w>k", opts)
 vim.keymap.set("n", "<C-Down>", "<C-w>j", opts)
 vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
 vim.keymap.set("n", "<C-h>", "<C-w>h", opts)
-
--- Override delete operations
-vim.keymap.set("n", "dd", '"_dd', opts) -- delete a line without adding to clipboard
-vim.keymap.set("n", "D", '"_D', opts) -- delete from cursor to end of line without adding to clipboard
-vim.keymap.set("v", "d", '"_d', opts) -- delete in visual mode without adding to clipboard
-vim.keymap.set("n", "x", '"_x', opts) -- delete character without adding it to the register
 
 -- increment / decrement
 vim.keymap.set("n", "<leader>-", "<C-x>", opts)
@@ -55,6 +63,15 @@ vim.keymap.set({ "n", "v" }, "<leader>p", [["+p]])
 -- no-op for Q
 vim.keymap.set("n", "Q", "<nop>", opts)
 
+-- fast scrolling
+vim.keymap.set({ "n", "v" }, "J", "9j", opts)
+vim.keymap.set({ "n", "v" }, "K", "9k", opts)
+vim.keymap.set({ "n", "v" }, "L", "16l", opts)
+vim.keymap.set({ "n", "v" }, "H", "16h", opts)
+
+-- float diagnostics
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, opts)
+
 -- tabs
 vim.keymap.set("n", "<Tab>", ":BufferNext<CR>", opts)
 vim.keymap.set("n", "<leader><Tab>", ":BufferPrevious<CR>", opts)
@@ -71,6 +88,18 @@ vim.keymap.set("n", "<S-Right>", ":vertical resize +2<CR>", opts)
 -- lsp
 vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 
+-- window management
+vim.keymap.set("n", "<leader>v", "<C-w>v", opts) -- split window vertically
+vim.keymap.set("n", "<leader>h", "<C-w>s", opts) -- split window horizontally
+vim.keymap.set("n", "<leader>se", "<C-w>=", opts) -- make split windows equal width & height
+
+-- Press qq fast to exit insert mode
+vim.keymap.set({ "v", "i" }, "qq", "<ESC>", opts)
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+--- plugins
+---------------------------------------------------------------------------
 -- telescope
 local telescope = require("telescope.builtin")
 local themes = require("telescope.themes")
@@ -89,27 +118,18 @@ vim.keymap.set("n", "<leader>gc", telescope.git_commits, opts)
 vim.keymap.set("n", "<leader>tt", ":Telescope<CR>", opts)
 
 -- toggleterm
-vim.keymap.set("n", "<c-t>", ":1ToggleTerm<CR>", opts) -- one term
-vim.keymap.set("n", "<c-y>", ":2ToggleTerm<CR>", opts) -- second term
-
--- window management
-vim.keymap.set("n", "<leader>v", "<C-w>v", opts) -- split window vertically
-vim.keymap.set("n", "<leader>h", "<C-w>s", opts) -- split window horizontally
-vim.keymap.set("n", "<leader>se", "<C-w>=", opts) -- make split windows equal width & height
-vim.keymap.set("n", "<leader>xs", ":close<CR>", opts) -- close current split window
-
--- Press qq fast to exit insert mode
-vim.keymap.set({ "v", "i" }, "qq", "<ESC>", opts)
+vim.keymap.set("n", "<c-t>", ":1ToggleTerm<CR>", opts)
+vim.keymap.set("n", "<c-y>", ":2ToggleTerm<CR>", opts)
 
 -- gitsigns
 local gitsigns = require("gitsigns")
 
-vim.keymap.set("n", "<leader>B", gitsigns.blame_line, opts) -- blame line
-vim.keymap.set("n", "<leader>R", gitsigns.reset_hunk, opts) -- reset hunk
-vim.keymap.set("n", "<leader>P", gitsigns.preview_hunk, opts) -- preview hunk
+vim.keymap.set("n", "<leader>B", gitsigns.blame_line, opts)
+vim.keymap.set("n", "<leader>R", gitsigns.reset_hunk, opts)
+vim.keymap.set("n", "<leader>P", gitsigns.preview_hunk, opts)
 vim.keymap.set("n", "<leader>D", function()
 	gitsigns.diffthis("~1")
-end, opts) -- diff this
+end, opts)
 
 -- spectre
 local spectre = require("spectre")
@@ -130,12 +150,4 @@ local kulala = require("kulala")
 
 vim.keymap.set("n", "<leader>HR", kulala.run, opts) -- run the current request
 vim.keymap.set("n", "<leader>HC", kulala.close, opts) -- close current .http buffer
-
--- fast scrolling
-vim.keymap.set({ "n", "v" }, "J", "9j", opts)
-vim.keymap.set({ "n", "v" }, "K", "9k", opts)
-vim.keymap.set({ "n", "v" }, "L", "16l", opts)
-vim.keymap.set({ "n", "v" }, "H", "16h", opts)
-
--- float diagnostics
-vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, opts)
+---------------------------------------------------------------------------

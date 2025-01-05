@@ -1,7 +1,7 @@
 vim.filetype.add({
-  extension = {
-    ["http"] = "http",
-  },
+	extension = {
+		["http"] = "http",
+	},
 })
 
 vim.opt.termguicolors = true
@@ -30,13 +30,14 @@ vim.opt.shiftround = true
 vim.opt.expandtab = true
 vim.opt.swapfile = false
 vim.opt.history = 1000
+vim.opt.ignorecase = true
 
 -- terminal
 vim.api.nvim_create_autocmd("TermOpen", {
-  pattern = "*",
-  callback = function()
-    vim.wo.number = false
-    vim.wo.relativenumber = false
-    vim.cmd("startinsert")
-  end,
+	pattern = "*",
+	callback = function()
+		vim.wo.number = false
+		vim.wo.relativenumber = false
+		vim.cmd("startinsert")
+	end,
 })

@@ -97,7 +97,6 @@ return {
 				})
 			end
 
-			-- eslint should be added here sometime, return some error
 			local servers = { "tsserver", "tailwindcss", "lua_ls", "html", "cssls", "pyright", "rust_analyzer" }
 
 			for _, server in ipairs(servers) do
@@ -106,25 +105,6 @@ return {
 					capabilities = capabilities,
 				})
 			end
-
-			--   lspconfig.jdtls.setup({
-			--     cmd = {
-			--       "java",
-			--       "--add-opens",
-			--       "jdk.incubator.foreign/all-unnamed",
-			--       "--add-opens",
-			--       "jdk.incubator.vector/all-unnamed",
-			--       "-jar",
-			--       "/home/wlemp/.local/share/nvim/mason/bin/jdtls",
-			--     },
-			--     settings = {
-			--       java = {
-			--         home = "/usr/lib/jvm/default-java",
-			--       },
-			--     },
-			--     on_attach = on_attach,
-			--     capabilities = capabilities,
-			--   })
 		end,
 	},
 	{

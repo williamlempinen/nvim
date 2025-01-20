@@ -105,6 +105,19 @@ return {
 					capabilities = capabilities,
 				})
 			end
+
+			-- jdtls
+			lspconfig.jdtls.setup({
+				cmd = { vim.fn.expand("~/.local/share/nvim/mason/bin/jdtls") },
+				root_dir = require("lspconfig.util").root_pattern(".git", "mvnw", "gradlew"),
+				settings = {
+					java = {
+						home = vim.fn.expand("/usr/lib/jvm/default-java"),
+					},
+				},
+				on_attach = on_attach,
+				capabilities = capabilities,
+			})
 		end,
 	},
 	{

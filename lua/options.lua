@@ -35,6 +35,8 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.shiftround = true
 
+vim.opt.colorcolumn = "100"
+
 -- terminal
 vim.api.nvim_create_autocmd("TermOpen", {
 	pattern = "*",
@@ -45,6 +47,7 @@ vim.api.nvim_create_autocmd("TermOpen", {
 	end,
 })
 
+-- java
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "java",
 	callback = function()

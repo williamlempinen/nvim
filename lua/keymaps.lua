@@ -14,6 +14,8 @@ vim.keymap.set("n", "<leader>cd", u.CopyDiagnosticsToClipboard, opts)
 -- Override delete operations
 vim.keymap.set("n", "dd", '"_dd', opts)
 vim.keymap.set("n", "D", '"_D', opts)
+vim.keymap.set("n", "di", '"_di', opts)
+vim.keymap.set("n", "da", '"_da', opts)
 vim.keymap.set("v", "d", '"_d', opts)
 vim.keymap.set("n", "x", '"_x', opts)
 

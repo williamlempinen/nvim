@@ -90,6 +90,7 @@ return {
 
 				vim.diagnostic.config({
 					virtual_text = {
+						source = "always",
 						severity = { min = vim.diagnostic.severity.WARN },
 					},
 					signs = true,

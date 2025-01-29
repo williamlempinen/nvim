@@ -43,7 +43,7 @@ vim.keymap.set("n", "<leader>xt", "<C-\\><C-n>:bd!<CR>", opts)
 vim.keymap.set("n", "<C-s>", ":w<CR>", opts)
 
 -- save with sudo
-vim.cmd([[cmap w!! w !sudo tee % > /dev/null | q]])
+vim.cmd([[cmap w!! w !sudo tee % > /dev/null && exit]])
 
 -- quit file
 vim.keymap.set("n", "<C-q>", ":q<CR>", opts)

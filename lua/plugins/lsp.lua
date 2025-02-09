@@ -100,6 +100,14 @@ return {
 				})
 			end
 
+			vim.api.nvim_create_autocmd("ColorScheme", {
+				callback = function()
+					vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#ffffff", bg = "" })
+				end,
+			})
+
+			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "double" })
+
 			local servers =
 				{ "tsserver", "tailwindcss", "lua_ls", "html", "cssls", "pyright", "rust_analyzer", "svelte" }
 

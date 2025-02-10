@@ -69,10 +69,10 @@ vim.keymap.set({ "n", "v" }, "<leader>p", [["+p]])
 vim.keymap.set("n", "Q", "<nop>", opts)
 
 -- fast scrolling
-vim.keymap.set({ "n", "v" }, "J", "9j", opts)
-vim.keymap.set({ "n", "v" }, "K", "9k", opts)
-vim.keymap.set({ "n", "v" }, "L", "16l", opts)
-vim.keymap.set({ "n", "v" }, "H", "16h", opts)
+vim.keymap.set({ "n", "v" }, "J", "10j", opts)
+vim.keymap.set({ "n", "v" }, "K", "10k", opts)
+vim.keymap.set({ "n", "v" }, "L", "12l", opts)
+vim.keymap.set({ "n", "v" }, "H", "12h", opts)
 
 -- float diagnostics
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, opts)

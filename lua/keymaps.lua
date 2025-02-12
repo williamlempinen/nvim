@@ -110,7 +110,11 @@ local telescope = require("telescope.builtin")
 local themes = require("telescope.themes")
 
 vim.keymap.set("n", "<leader>ff", function()
-	telescope.find_files({ hidden = true, no_ignore = true, file_ignore_patterns = { ".git/", "node_modules/" } })
+	telescope.find_files({
+		hidden = true,
+		no_ignore = true,
+		file_ignore_patterns = { ".git/", "node_modules/", "target/" },
+	})
 end, opts)
 vim.keymap.set("n", "<leader>fg", telescope.live_grep, opts)
 vim.keymap.set("n", "<leader>fo", telescope.oldfiles, opts)

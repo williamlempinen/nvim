@@ -54,9 +54,10 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls",
-					"tsserver",
+					"ts_ls",
 					"html",
 					"cssls",
+					"rust_analyzer",
 					"tailwindcss",
 					"prismals",
 					"pyright",
@@ -108,8 +109,7 @@ return {
 
 			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "double" })
 
-			local servers =
-				{ "tsserver", "tailwindcss", "lua_ls", "html", "cssls", "pyright", "rust_analyzer", "svelte" }
+			local servers = { "ts_ls", "tailwindcss", "lua_ls", "html", "cssls", "pyright", "rust_analyzer", "svelte" }
 
 			for _, server in ipairs(servers) do
 				lspconfig[server].setup({

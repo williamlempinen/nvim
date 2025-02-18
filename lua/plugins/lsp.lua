@@ -38,8 +38,8 @@ return {
 		opts = {
 			ensure_installed = {
 				"lua_ls",
-				"tsserver",
 				"html",
+				"ts_ls",
 				"cssls",
 				"tailwindcss",
 				"prismals",
@@ -55,7 +55,7 @@ return {
 				ensure_installed = {
 					"lua_ls",
 					"html",
-					"tsserver",
+					"ts_ls",
 					"cssls",
 					"rust_analyzer",
 					"tailwindcss",
@@ -109,8 +109,7 @@ return {
 
 			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "double" })
 
-			local servers =
-				{ "tailwindcss", "lua_ls", "html", "cssls", "pyright", "rust_analyzer", "svelte", "tsserver" }
+			local servers = { "tailwindcss", "lua_ls", "html", "cssls", "pyright", "rust_analyzer", "svelte", "ts_ls" }
 
 			for _, server in ipairs(servers) do
 				lspconfig[server].setup({

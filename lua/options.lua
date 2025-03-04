@@ -56,3 +56,25 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt.expandtab = true
 	end,
 })
+
+-- diagnostic float
+vim.diagnostic.config({
+	virtual_text = {
+		source = "always",
+		severity = { min = vim.diagnostic.severity.WARN },
+	},
+	signs = true,
+	underline = true,
+	float = {
+		source = "always",
+		border = "rounded",
+		focusable = true,
+	},
+})
+
+-- float border
+vim.api.nvim_create_autocmd("ColorScheme", {
+	callback = function()
+		vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#ffffff", bg = "" })
+	end,
+})

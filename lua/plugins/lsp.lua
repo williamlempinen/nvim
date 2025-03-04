@@ -90,15 +90,6 @@ return {
 				vim.keymap.set("n", "go", vim.lsp.buf.type_definition, opts)
 				vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
 				vim.keymap.set("n", "gs", vim.lsp.buf.signature_help, opts)
-
-				vim.diagnostic.config({
-					virtual_text = {
-						source = "always",
-						severity = { min = vim.diagnostic.severity.WARN },
-					},
-					signs = true,
-					underline = true,
-				})
 			end
 
 			-- rust_analyzer workaround for 32802 error
@@ -111,14 +102,6 @@ return {
 					return default_diagnostic_handler(err, result, context, config)
 				end
 			end
-
-			vim.api.nvim_create_autocmd("ColorScheme", {
-				callback = function()
-					vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#ffffff", bg = "" })
-				end,
-			})
-
-			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "double" })
 
 			local servers = { "tailwindcss", "lua_ls", "html", "cssls", "pyright", "rust_analyzer", "svelte", "ts_ls" }
 
@@ -141,6 +124,10 @@ return {
 				on_attach = on_attach,
 				capabilities = capabilities,
 			})
+
+			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+			vim.lsp.handlers["textDocument/signatureHelp"] =
+				vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
 		end,
 	},
 }

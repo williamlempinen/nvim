@@ -62,6 +62,7 @@ return {
 					"prismals",
 					"pyright",
 					"svelte",
+					"hls",
 				},
 			})
 		end,
@@ -103,7 +104,8 @@ return {
 				end
 			end
 
-			local servers = { "tailwindcss", "lua_ls", "html", "cssls", "pyright", "rust_analyzer", "svelte", "ts_ls" }
+			local servers =
+				{ "tailwindcss", "lua_ls", "html", "cssls", "pyright", "rust_analyzer", "svelte", "ts_ls", "hls" }
 
 			for _, server in ipairs(servers) do
 				lspconfig[server].setup({

@@ -5,6 +5,9 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				python = { "isort", "black" },
+				html = { "prettierd", "prettier", "eslint_d", "html", stop_after_first = true },
+				css = { "prettierd", "prettier", "eslint_d", "cssls", stop_after_first = true },
+				scss = { "prettierd", "prettier", "eslint_d", "cssls", stop_after_first = true },
 				javascript = { "prettierd", "prettier", "eslint_d", stop_after_first = true },
 				typescript = { "prettierd", "prettier", "eslint_d", stop_after_first = true },
 				javascriptreact = { "prettierd", "prettier", "eslint_d", stop_after_first = true },

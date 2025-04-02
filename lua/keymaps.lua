@@ -126,10 +126,6 @@ vim.keymap.set("n", "<leader>sp", telescope.spell_suggest, opts)
 vim.keymap.set("n", "<leader>gc", telescope.git_commits, opts)
 vim.keymap.set("n", "<leader>tt", ":Telescope<CR>", opts)
 
--- toggleterm
-vim.keymap.set("n", "<c-t>", ":1ToggleTerm<CR>", opts)
-vim.keymap.set("n", "<c-y>", ":2ToggleTerm<CR>", opts)
-
 -- gitsigns
 local gitsigns = require("gitsigns")
 

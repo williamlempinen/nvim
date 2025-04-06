@@ -136,19 +136,19 @@ return {
 				cygwin_support = false,
 			},
 			diagnostics = {
-				enable = false,
-				show_on_dirs = false,
-				show_on_open_dirs = true,
+				enable = true,
+				show_on_dirs = true,
+				show_on_open_dirs = false,
 				debounce_delay = 50,
 				severity = {
-					min = vim.diagnostic.severity.HINT,
+					min = vim.diagnostic.severity.ERROR,
 					max = vim.diagnostic.severity.ERROR,
 				},
 				icons = {
-					hint = "",
-					info = "",
-					warning = "",
-					error = "",
+					hint = "", -- not used
+					info = "", -- not used
+					warning = "", -- not used
+					error = "x",
 				},
 			},
 			modified = {

@@ -117,10 +117,36 @@ return {
 			}
 
 			for _, server in ipairs(servers) do
-				lspconfig[server].setup({
-					on_attach = on_attach,
-					capabilities = capabilities,
-				})
+				if server == "rust_analyzer" then
+					lspconfig.rust_analyzer.setup({
+						on_attach = on_attach,
+						capabilities = capabilities,
+						settings = {
+							["rust-analyzer"] = {
+								rustfmt = {
+									overrideCommand = { "leptosfmt", "--stdin", "--rustfmt" },
+								},
+								cargo = {
+									features = { "ssr" }, -- Enable SSR feature
+								},
+								procMacro = {
+									ignored = {
+										leptos_macro = {
+											-- Uncomment this line if you get issues with `#[component]`
+											-- "component",
+											"server",
+										},
+									},
+								},
+							},
+						},
+					})
+				else
+					lspconfig[server].setup({
+						on_attach = on_attach,
+						capabilities = capabilities,
+					})
+				end
 			end
 
 			-- jdtls

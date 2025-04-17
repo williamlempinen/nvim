@@ -3,6 +3,7 @@ return {
 	config = function()
 		require("conform").setup({
 			formatters_by_ft = {
+				json = { "jsonlint", "prettier", "prettierd" },
 				lua = { "stylua" },
 				python = { "isort", "black" },
 				html = { "prettierd", "prettier", "eslint_d", "html", stop_after_first = true },

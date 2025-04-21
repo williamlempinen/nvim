@@ -37,6 +37,10 @@ vim.opt.shiftround = true
 
 vim.opt.colorcolumn = "100"
 
+-- fold
+vim.opt.foldmethod = "indent"
+vim.opt.foldlevelstart = 99
+
 -- terminal
 vim.api.nvim_create_autocmd("TermOpen", {
 	pattern = "*",

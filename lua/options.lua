@@ -1,9 +1,3 @@
-vim.filetype.add({
-	extension = {
-		["http"] = "http",
-	},
-})
-
 vim.opt.termguicolors = true
 
 -- set leader to space

@@ -149,10 +149,4 @@ end, opts)
 vim.keymap.set("v", "<ESC><leader>sw", function()
 	spectre.open_visual({ select_word = true })
 end, opts)
-
--- kulala
-local kulala = require("kulala")
-
-vim.keymap.set("n", "<leader>HR", kulala.run, opts) -- run the current request
-vim.keymap.set("n", "<leader>HC", kulala.close, opts) -- close current .http buffer
 ---------------------------------------------------------------------------

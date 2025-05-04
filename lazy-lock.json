@@ -43,14 +43,6 @@
     "branch": "main",
     "commit": "17ab794b6fce6fce768430ebc925347e349e1d60"
   },
-  "kanagawa.nvim": {
-    "branch": "master",
-    "commit": "cc3b68b08e6a0cb6e6bf9944932940091e49bb83"
-  },
-  "kulala.nvim": {
-    "branch": "main",
-    "commit": "ffdfd428018fd00a1d17bdccebbc70ba5cf48778"
-  },
   "lazy.nvim": {
     "branch": "main",
     "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a"
@@ -119,21 +111,9 @@
     "branch": "master",
     "commit": "4c3a5848ee0b09ecdea73adcd2a689190aeb728c"
   },
-  "obscure.nvim": {
-    "branch": "main",
-    "commit": "3068a06b7ef1b84a2edfb2fd801db646fda6ce4f"
-  },
   "plenary.nvim": {
     "branch": "master",
     "commit": "857c5ac632080dba10aae49dba902ce3abf91b35"
-  },
-  "rasmus.nvim": {
-    "branch": "main",
-    "commit": "49f7ee7bf3eb00db52c77f84b15bc69f318bafc1"
-  },
-  "rose-pine": {
-    "branch": "main",
-    "commit": "96ff3993a67356ee85d1cdab9be652cdc1c5d1ac"
   },
   "rust-tools.nvim": {
     "branch": "master",

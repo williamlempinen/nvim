@@ -41,6 +41,7 @@ return {
 				"html",
 				"ts_ls",
 				"cssls",
+				"jdtls",
 				"tailwindcss",
 				"prismals",
 				"pyright",
@@ -57,6 +58,7 @@ return {
 					"html",
 					"ts_ls",
 					"cssls",
+					"jdtls",
 					"rust_analyzer",
 					"tailwindcss",
 					"prismals",
@@ -110,6 +112,7 @@ return {
 				"html",
 				"cssls",
 				"pyright",
+				"jdtls",
 				"rust_analyzer",
 				"svelte",
 				"ts_ls",
@@ -150,17 +153,18 @@ return {
 			end
 
 			-- jdtls
-			lspconfig.jdtls.setup({
-				cmd = { vim.fn.expand("~/.local/share/nvim/mason/bin/jdtls") },
-				root_dir = require("lspconfig.util").root_pattern(".git", "mvnw", "gradlew"),
-				settings = {
-					java = {
-						home = vim.fn.expand("/usr/lib/jvm/default-java"),
-					},
-				},
-				on_attach = on_attach,
-				capabilities = capabilities,
-			})
+			-- lspconfig.jdtls.setup({
+			-- 	cmd = { vim.fn.expand("~/.local/share/nvim/mason/bin/jdtls") },
+			-- 	root_dir = require("lspconfig.util").root_pattern(".git", "mvnw", "gradlew"),
+			-- 	settings = {
+			-- 		java = {
+			-- 			home = vim.fn.expand("/usr/lib/jvm/default-java"),
+			-- 		},
+			-- 	},
+			-- 	on_attach = on_attach,
+			-- 	capabilities = capabilities,
+			-- })
+			--
 
 			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
 			vim.lsp.handlers["textDocument/signatureHelp"] =

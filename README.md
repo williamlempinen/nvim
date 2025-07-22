@@ -1,3 +1,3 @@
 # NeoVim
 
-I use neovim as my main text editor and these are my current configurations.
+This is now old version of my neovim confs as I have switch to lazyvim.
